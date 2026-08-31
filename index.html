@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porfolio</title>
+    <style>
+        :root {
+            --bg-color: #161618;
+            --sidebar-bg: #1e1e20;
+            --text-main: #d8d8d8;
+            --text-muted: #888888;
+            --accent: #6c9cf8;
+            --accent-hover: #5a85d6;
+            --border: #333333;
+            --btn-bg: #2b2b2d;
+            --btn-hover: #3a3a3d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .layout {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .sidebar {
+            width: 260px;
+            padding: 2rem 1.5rem;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 1px solid var(--border);
+            flex-shrink: 0;
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .toc h3 {
+            font-size: 1rem;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .toc a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .toc a:hover, .toc a.active {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 3rem 4rem;
+            max-width: 850px;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+        .contacts {
+            font-size: 0.95rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            margin-bottom: 2rem;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: var(--border);
+            margin: 2.5rem 0;
+        }
+
+        .project {
+            margin-bottom: 4rem;
+            scroll-margin-top: 2rem;
+        }
+
+        .project h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .meta-info {
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .meta-info p {
+            margin-bottom: 0.3rem;
+        }
+
+        .meta-info p:last-child {
+            margin-bottom: 0;
+        }
+
+        .meta-info strong {
+            color: #ffffff;
+        }
+
+        .description {
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-github {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--btn-bg);
+            color: var(--text-main);
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 500;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+            margin-bottom: 2rem;
+        }
+
+        .btn-github:hover {
+            background-color: var(--btn-hover);
+            text-decoration: none;
+            border-color: #555;
+        }
+
+        .btn-github svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .video-container {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        .gallery-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gallery-main {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            margin-bottom: 1rem;
+            aspect-ratio: 16/9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gallery-main img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .gallery-thumbnails {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            width: 100%;
+            padding: 4px;
+            justify-content: flex-start;
+            scrollbar-width: thin;
+        }
+
+        .gallery-thumbnails::-webkit-scrollbar {
+            height: 6px;
+        }
+        .gallery-thumbnails::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.2);
+            border-radius: 4px;
+        }
+        .gallery-thumbnails::-webkit-scrollbar-thumb {
+            background: #555;
+            border-radius: 4px;
+        }
+
+        .gallery-thumb {
+            width: 100px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 2px solid transparent;
+            opacity: 0.5;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .gallery-thumb:hover {
+            opacity: 0.8;
+        }
+
+        .gallery-thumb.active {
+            border-color: #ffffff;
+            opacity: 1;
+        }
+
+        .caption {
+            text-align: center;
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .layout {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding: 1.5rem;
+            }
+            .content {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="layout">
+        <!-- Боковая панель -->
+        <aside class="sidebar">
+            <h2 class="site-title"><a href="#" style="color: inherit; text-decoration: none;">Resume</a></h2>
+
+            <div class="toc">
+                <h3>Table of Contents</h3>
+                <ul id="toc-list">
+                    <li><a href="#purrfect-destruction">Purrfect Destruction</a></li>
+                    <li><a href="#space-shooter">Space Shooter</a></li>
+                    <li><a href="#he-was-a-student">He was a student</a></li>
+                    <li><a href="#cat-and-mouse">Cat and Mouse Survive</a></li>
+                    <li><a href="#unreal-concept">UE 3D Shooter Concept</a></li>
+                    <li><a href="#stone-pacific">Stone Pacific</a></li>
+                    <li><a href="#forest-knight">Forest Knight</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="page-header">
+                <p class="subtitle">Aleksandr Vysotskii</p>
+            </header>
+
+
+
+            <section id="purrfect-destruction" class="project">
+                <h2>Purrfect Destruction</h2>
+
+                <div class="meta-info">
+                    <p><strong>Genre:</strong> 3D Hypercasual</p>
+                    <p><strong>Platform:</strong> Mobile</p>
+                    <p><strong>Role:</strong> Programmer</p>
+                    <p><strong>Year:</strong> 2026</p>
+                </div>
+
+                <div class="description">
+                    <p>A fun and fast-paced 3D mobile hypercasual game where the player takes control of a mischievous cat. The main objective is to run around an apartment and aggressively knock over various household items to score maximum points. I was solely responsible for writing the core gameplay code and character controllers.</p>
+                </div>
+
+                <a href="https://github.com/твоя-ссылка" target="_blank" class="btn-github">
+                    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    View on GitHub
+                </a>
+
+                <div class="video-container">
+                    <video controls muted preload="metadata">
+                        <source src="purrfect-destruction.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+
+            <section id="space-shooter" class="project">
+                <h2>Space Shooter</h2>
+
+                <div class="meta-info">
+                    <p><strong>Genre:</strong> 2D Shooter</p>
+                    <p><strong>Platform:</strong> PC</p>
+                    <p><strong>Role:</strong> Programmer, Asset Creator</p>
+                    <p><strong>Year:</strong> 2024</p>
+                </div>
+
+                <div class="description">
+                    <p>A simple yet engaging 2D space shooter featuring three distinct classes of enemies, each with unique behavioral patterns and attack mechanics. I was responsible for both writing the core gameplay logic and creating the 2D visual assets for the game.</p>
+                </div>
+
+                <a href="https://github.com/твоя-ссылка" target="_blank" class="btn-github">
+                    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    View on GitHub
+                </a>
+
+                <div class="video-container">
+                    <video controls muted preload="metadata">
+                        <source src="space-shooter.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+
+            <!-- 3. He was a student (Video) -->
+            <section id="he-was-a-student" class="project">
+                <h2>He was a student</h2>
+
+                <div class="meta-info">
+                    <p><strong>Genre:</strong> 2D Action / Minigames</p>
+                    <p><strong>Context:</strong> Game Jam</p>
+                    <p><strong>Role:</strong> Programmer</p>
+                    <p><strong>Year:</strong> 2024</p>
+                </div>
+
+                <div class="description">
+                    <p>Developed during a game jam, this project is a humorous parody of "Dumb Ways to Die". It features two fast-paced mini-games requiring quick reflexes and pattern recognition. My main contribution was programming the underlying systems and minigame logic.</p>
+                </div>
+
+                <a href="https://github.com/твоя-ссылка" target="_blank" class="btn-github">
+                    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    View on GitHub
+                </a>
+
+                <div class="video-container">
+                    <video controls muted preload="metadata">
+                        <source src="student-gameplay.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+
+            <section id="cat-and-mouse" class="project">
+                <h2>Cat and Mouse Survive</h2>
+
+                <div class="meta-info">
+                    <p><strong>Genre:</strong> 2D Platformer</p>
+                    <p><strong>Platform:</strong> Windows (Game Jam)</p>
+                    <p><strong>Role:</strong> Programmer (Movement), Animator</p>
+                    <p><strong>Year:</strong> 2022</p>
+                </div>
+
+                <div class="description">
+                    <p>A classic 2D platformer created as part of a game jam. My primary contributions included writing the core character movement scripts to ensure tight, responsive controls, as well as creating the walking animations for the main cat character.</p>
+                </div>
+
+                <a href="https://github.com/твоя-ссылка" target="_blank" class="btn-github">
+                    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    View on GitHub
+                </a>
+
+                <div class="video-container">
+                    <video controls muted preload="metadata">
+                        <source src="cat-mouse.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+
+            <!-- 5. Unreal Engine Shooter Concept (Video) -->
+            <section id="unreal-concept" class="project">
+                <h2>3D Shooter Concept</h2>
+
+                <div class="meta-info">
+                    <p><strong>Engine:</strong> Unreal Engine (Blueprints)</p>
+                    <p><strong>Context:</strong> Netology Course Project</p>
+                    <p><strong>Role:</strong> Developer</p>
+                    <p><strong>Year:</strong> 2022</p>
+                </div>
+
+                <div class="description">
+                    <p>A 3D shooter prototype developed using Unreal Engine Blueprints as a final project for a Netology course. It showcases fundamental mechanics such as a functional weapon system, basic enemy AI, and interactive environments.</p>
+                </div>
+
+                <a href="https://github.com/твоя-ссылка" target="_blank" class="btn-github">
+                    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    View on GitHub
+                </a>
+
+                <div class="video-container">
+                    <video controls muted preload="metadata">
+                        <source src="ue-shooter.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+
+            <!-- 6. Stone Pacific (Gallery) -->
+            <section id="stone-pacific" class="project">
+                <h2>Stone Pacific</h2>
+
+                <div class="meta-info">
+                    <p><strong>Context:</strong> HSE University Project</p>
+                    <p><strong>Role:</strong> Game Designer, 3D Modeler</p>
+                </div>
+
+                <div class="description">
+                    <p>A comprehensive game concept developed for the HSE University certificate program. The project includes a detailed pitch presentation, custom 3D models, and high-fidelity mockups of the game screens and level layouts.</p>
+                </div>
+
+                <div class="gallery-container">
+                    <div class="gallery-main">
+                        <img src="https://via.placeholder.com/800x450/222222/ffffff?text=Stone+Pacific+1" alt="Main Screenshot">
+                    </div>
+
+                    <div class="gallery-thumbnails">
+                        <img src="https://via.placeholder.com/800x450/222222/ffffff?text=Stone+Pacific+1" class="gallery-thumb active" alt="Screen 1">
+                        <img src="https://via.placeholder.com/800x450/333333/ffffff?text=Stone+Pacific+2" class="gallery-thumb" alt="Screen 2">
+                        <img src="https://via.placeholder.com/800x450/444444/ffffff?text=Stone+Pacific+3" class="gallery-thumb" alt="Screen 3">
+                        <img src="https://via.placeholder.com/800x450/555555/ffffff?text=Stone+Pacific+4" class="gallery-thumb" alt="Screen 4">
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="forest-knight" class="project">
+                <h2>Forest Knight</h2>
+
+                <div class="meta-info">
+                    <p><strong>Context:</strong> HSE University Project</p>
+                    <p><strong>Role:</strong> Game Designer, 3D Modeler</p>
+                </div>
+
+                <div class="description">
+                    <p>Developed alongside "Stone Pacific" for the HSE University program, this project involves a full game concept pitch. I created the presentation, 3D assets, and UI/UX screen mockups to demonstrate the core gameplay loop and visual style.</p>
+                </div>
+
+                <!-- Блок галереи -->
+                <div class="gallery-container">
+                    <div class="gallery-main">
+                        <img src="https://via.placeholder.com/800x450/2a3b2a/ffffff?text=Forest+Knight+1" alt="Main Screenshot">
+                    </div>
+
+                    <div class="gallery-thumbnails">
+                        <img src="https://via.placeholder.com/800x450/2a3b2a/ffffff?text=Forest+Knight+1" class="gallery-thumb active" alt="Screen 1">
+                        <img src="https://via.placeholder.com/800x450/3a4b3a/ffffff?text=Forest+Knight+2" class="gallery-thumb" alt="Screen 2">
+                        <img src="https://via.placeholder.com/800x450/4a5b4a/ffffff?text=Forest+Knight+3" class="gallery-thumb" alt="Screen 3">
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+                        const sections = document.querySelectorAll('.project');
+            const navLinks = document.querySelectorAll('#toc-list a');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        const activeId = entry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`#toc-list a[href="#${activeId}"]`);
+                        if (activeLink) activeLink.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            sections.forEach(section => observer.observe(section));
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+                    if(targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+
+            const galleries = document.querySelectorAll('.gallery-container');
+
+            galleries.forEach(gallery => {
+                const mainImg = gallery.querySelector('.gallery-main img');
+                const thumbnails = gallery.querySelectorAll('.gallery-thumb');
+
+                thumbnails.forEach(thumb => {
+                    thumb.addEventListener('click', function() {
+                        mainImg.src = this.src;
+                        thumbnails.forEach(t => t.classList.remove('active'));
+                        this.classList.add('active');
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
