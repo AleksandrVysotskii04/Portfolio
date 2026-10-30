@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Aleksandr Vysotskii</title>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     <style>
         :root {
             --bg-color: #161618;
@@ -243,6 +242,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-bottom: 1rem;
         }
 
         .gallery-main {
@@ -289,23 +289,6 @@
 
         .gallery-thumb:hover { opacity: 0.8; }
         .gallery-thumb.active { border-color: #ffffff; opacity: 1; }
-
-        .model-viewer-container {
-            width: 100%;
-            height: 450px;
-            background-color: #242427;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-        
-        model-viewer {
-            width: 100%;
-            height: 100%;
-            --poster-color: transparent;
-        }
 
         .art-grid {
             display: grid;
@@ -373,15 +356,6 @@
                 </div>
 
                 <div class="toc-category">
-                    <h4>Interactive Models</h4>
-                    <ul>
-                        <li><a href="#model-james-marriott">James Marriott</a></li>
-                        <li><a href="#model-sea-lion">Sea Lion Rig</a></li>
-                        <li><a href="#model-vending-machine">Vending Machine</a></li>
-                    </ul>
-                </div>
-
-                <div class="toc-category">
                     <h4>3D Project Renders</h4>
                     <ul>
                         <li><a href="#render-chess">Chess</a></li>
@@ -389,6 +363,7 @@
                         <li><a href="#render-jewelstandcat">JewelStandCat</a></li>
                         <li><a href="#render-jewerly">Jewerly</a></li>
                         <li><a href="#render-mugs">Mugs</a></li>
+                        <li><a href="#render-sealion">Sea Lion</a></li>
                     </ul>
                 </div>
 
@@ -401,8 +376,8 @@
             </div>
 
             <div class="sidebar-contacts">
-                <p>+49 1521 9346999[cite: 2]</p>
-                <p><a href="mailto:alexandervedu@gmail.com">alexandervedu@gmail.com[cite: 2]</a></p>
+                <p>+49 1521 9346999</p>
+                <p><a href="mailto:alexandervedu@gmail.com">alexandervedu@gmail.com</a></p>
                 
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/canelmo/" target="_blank" aria-label="LinkedIn" title="LinkedIn">
@@ -604,63 +579,6 @@
                 </div>
             </section>
 
-            <section id="model-james-marriott" class="project">
-                <h2>James Marriott</h2>
-                <div class="meta-info">
-                    <p><strong>Asset Type:</strong> Interactive 3D Model</p>
-                    <p><strong>Format:</strong> GLB</p>
-                </div>
-                <div class="description">
-                    <p>A character model of James Marriott. Left-click and drag to rotate the view. Scroll to zoom in and out.</p>
-                </div>
-                <div class="model-viewer-container">
-                    <model-viewer 
-                        src="3Dmodels/JamesMarriott.glb" 
-                        alt="3D model of James Marriott" 
-                        auto-rotate 
-                        camera-controls>
-                    </model-viewer>
-                </div>
-            </section>
-
-            <section id="model-sea-lion" class="project">
-                <h2>Sea Lion Rig</h2>
-                <div class="meta-info">
-                    <p><strong>Asset Type:</strong> Interactive 3D Model & Rig</p>
-                    <p><strong>Format:</strong> GLB</p>
-                </div>
-                <div class="description">
-                    <p>A fully rigged 3D model of a sea lion. Left-click and drag to rotate the view. Scroll to zoom in and out.</p>
-                </div>
-                <div class="model-viewer-container">
-                    <model-viewer 
-                        src="3Dmodels/SeaLion_Rig.glb" 
-                        alt="3D model of a Sea Lion" 
-                        auto-rotate 
-                        camera-controls>
-                    </model-viewer>
-                </div>
-            </section>
-
-            <section id="model-vending-machine" class="project">
-                <h2>Vending Machine</h2>
-                <div class="meta-info">
-                    <p><strong>Asset Type:</strong> Interactive 3D Prop</p>
-                    <p><strong>Format:</strong> GLB</p>
-                </div>
-                <div class="description">
-                    <p>An environmental 3D prop of a vending machine. Left-click and drag to rotate the view. Scroll to zoom in and out.</p>
-                </div>
-                <div class="model-viewer-container">
-                    <model-viewer 
-                        src="3Dmodels/vendingmachine.glb" 
-                        alt="3D model of a Vending Machine" 
-                        auto-rotate 
-                        camera-controls>
-                    </model-viewer>
-                </div>
-            </section>
-
             <section id="render-chess" class="project">
                 <h2>Chess</h2>
                 <div class="meta-info">
@@ -766,6 +684,32 @@
                         <img src="3Dmodels/Mugs/aleksandr-vysotskii-photo-2026-07-21-19-57-41.webp" class="gallery-thumb" alt="Screen 2">
                         <img src="3Dmodels/Mugs/aleksandr-vysotskii-photo-2026-07-21-19-56-08.webp" class="gallery-thumb" alt="Screen 3">
                     </div>
+                </div>
+            </section>
+
+            <section id="render-sealion" class="project">
+                <h2>Sea Lion</h2>
+                <div class="meta-info">
+                    <p><strong>Category:</strong> 3D Render / Animation</p>
+                </div>
+                <div class="description">
+                    <p>A 3D model, rig, and animation of a sea lion.</p>
+                </div>
+                <div class="gallery-container">
+                    <div class="gallery-main">
+                        <img src="3Dmodels/SeaLion/aleksandr-vysotskii-ezgif-200fb8aa6d0e1a83.gif" alt="Sea Lion Main GIF">
+                    </div>
+                    <div class="gallery-thumbnails">
+                        <img src="3Dmodels/SeaLion/aleksandr-vysotskii-ezgif-200fb8aa6d0e1a83.gif" class="gallery-thumb active" alt="Screen 1">
+                        <img src="3Dmodels/SeaLion/aleksandr-vysotskii-screenshot-2026-07-09-at-23-07-23.webp" class="gallery-thumb" alt="Screen 2">
+                        <img src="3Dmodels/SeaLion/aleksandr-vysotskii-screenshot-2026-07-08-at-23-53-45.webp" class="gallery-thumb" alt="Screen 3">
+                    </div>
+                </div>
+                <div class="video-container">
+                    <video controls muted preload="metadata">
+                        <source src="3Dmodels/SeaLion/2026-07-21-20-57-27.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </section>
             
