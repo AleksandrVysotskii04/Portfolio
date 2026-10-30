@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Aleksandr Vysotskii</title>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     <style>
         :root {
             --bg-color: #161618;
@@ -113,7 +112,6 @@
             font-weight: bold;
         }
 
-        /* Contacts & Socials */
         .sidebar-contacts {
             margin-top: 2rem;
             padding-top: 1.5rem;
@@ -154,7 +152,6 @@
             transform: translateY(-2px);
         }
 
-        /* Main Content */
         .content {
             flex-grow: 1;
             padding: 3rem 4rem;
@@ -197,7 +194,7 @@
 
         .description { margin-bottom: 1.5rem; }
 
-        .btn-github {
+        .btn-action {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
@@ -211,19 +208,18 @@
             margin-bottom: 2rem;
         }
 
-        .btn-github:hover {
+        .btn-action:hover {
             background-color: var(--btn-hover);
             text-decoration: none;
             border-color: #555;
         }
 
-        .btn-github svg {
+        .btn-action svg {
             width: 20px;
             height: 20px;
             fill: currentColor;
         }
 
-        /* Media Containers */
         .video-container {
             width: 100%;
             border-radius: 8px;
@@ -293,22 +289,6 @@
         .gallery-thumb:hover { opacity: 0.8; }
         .gallery-thumb.active { border-color: #ffffff; opacity: 1; }
 
-        .model-viewer-container {
-            width: 100%;
-            height: 450px;
-            background-color: #242427;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-        }
-        
-        model-viewer {
-            width: 100%;
-            height: 100%;
-            --poster-color: transparent;
-        }
-
-        /* Art Grid CSS */
         .art-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -377,7 +357,9 @@
                 <div class="toc-category">
                     <h4>3D Models</h4>
                     <ul>
-                        <li><a href="#3d-models-section">Interactive Models</a></li>
+                        <li><a href="#model-james-marriott">James Marriott</a></li>
+                        <li><a href="#model-sea-lion">Sea Lion Rig</a></li>
+                        <li><a href="#model-vending-machine">Vending Machine</a></li>
                     </ul>
                 </div>
 
@@ -390,8 +372,8 @@
             </div>
 
             <div class="sidebar-contacts">
-                <p>+49 1521 9346999[cite: 2]</p>
-                <p><a href="mailto:alexandervedu@gmail.com">alexandervedu@gmail.com[cite: 2]</a></p>
+                <p>+49 1521 9346999</p>
+                <p><a href="mailto:alexandervedu@gmail.com">alexandervedu@gmail.com</a></p>
                 
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/canelmo/" target="_blank" aria-label="LinkedIn" title="LinkedIn">
@@ -415,6 +397,7 @@
                 <p class="subtitle">Aleksandr Vysotskii</p>
             </header>
 
+            <!-- ===================== GAMES ===================== -->
 
             <section id="purrfect-destruction" class="project">
                 <h2>Purrfect Destruction</h2>
@@ -427,7 +410,7 @@
                 <div class="description">
                     <p> 3D mobile hypercasual game where the player takes control of a cat. The main objective is to run around an apartment and aggressively knock over various household items to score points. </p>
                 </div>
-                <a href="https://github.com/AleksandrVysotskii04/HyperCasualCatsGame" target="_blank" class="btn-github">
+                <a href="https://github.com/AleksandrVysotskii04/HyperCasualCatsGame" target="_blank" class="btn-action">
                     <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     View on GitHub
                 </a>
@@ -450,7 +433,7 @@
                 <div class="description">
                     <p>2D space shooter featuring three classes of enemies. </p>
                 </div>
-                <a href="https://github.com/Canelmo/Space-Shooter" target="_blank" class="btn-github">
+                <a href="https://github.com/Canelmo/Space-Shooter" target="_blank" class="btn-action">
                     <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     View on GitHub
                 </a>
@@ -473,7 +456,7 @@
                 <div class="description">
                     <p>Developed during a game jam, this project is a parody of "Dumb Ways to Die". It features two mini-games. </p>
                 </div>
-                <a href="https://github.com/Canelmo/He-Was-A-Student" target="_blank" class="btn-github">
+                <a href="https://github.com/Canelmo/He-Was-A-Student" target="_blank" class="btn-action">
                     <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     View on GitHub
                 </a>
@@ -496,7 +479,7 @@
                 <div class="description">
                     <p>A classic 2D platformer created as part of a game jam. My primary contributions included writing the core character movement scripts, as well as creating the walking and jumping for the main cat character.</p>
                 </div>
-                <a href="https://github.com/Canelmo/Cat-Mouse-Survive" target="_blank" class="btn-github">
+                <a href="https://github.com/Canelmo/Cat-Mouse-Survive" target="_blank" class="btn-action">
                     <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     View on GitHub
                 </a>
@@ -519,7 +502,7 @@
                 <div class="description">
                     <p>A 3D shooter prototype developed using Unreal Engine Blueprints as a final project for a Netology course. It showcases fundamental mechanics such as a functional weapon system, basic enemy AI, and interactive environments.</p>
                 </div>
-                <a href="https://gitlab.com/canelmo_projects/ued30-alexandervysotskiy-diploma" target="_blank" class="btn-github">
+                <a href="https://gitlab.com/canelmo_projects/ued30-alexandervysotskiy-diploma" target="_blank" class="btn-action">
                     <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     View on Gitlab
                 </a>
@@ -531,6 +514,7 @@
                 </div>
             </section>
 
+            <!-- ===================== GAME CONCEPTS ===================== -->
 
             <section id="stone-pacific" class="project">
                 <h2>Stone Pacific</h2>
@@ -543,13 +527,24 @@
                 </div>
                 <div class="gallery-container">
                     <div class="gallery-main">
-                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific_page-0001.jpg?raw=true" alt="Main Screenshot">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific(English%20Translation)_page-0001.jpg?raw=true" alt="Main Screenshot">
                     </div>
                     <div class="gallery-thumbnails">
-                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific_page-0001.jpg?raw=true" class="gallery-thumb active" alt="Screen 1">
-                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific_page-0002.jpg?raw=true" class="gallery-thumb" alt="Screen 2">
-                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific_page-0003.jpg?raw=true" class="gallery-thumb" alt="Screen 3">
-                        <!-- Removed repetitive list lines for brevity, place your remaining screen links here -->
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific(English%20Translation)_page-0001.jpg?raw=true" class="gallery-thumb active" alt="Screen 1">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific(English%20Translation)_page-0002.jpg?raw=true" class="gallery-thumb" alt="Screen 2">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific(English%20Translation)_page-0003.jpg?raw=true" class="gallery-thumb" alt="Screen 3">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific(English%20Translation)_page-0004.jpg?raw=true" class="gallery-thumb" alt="Screen 4">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific(English%20Translation)_page-0005.jpg?raw=true" class="gallery-thumb" alt="Screen 5">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific(English%20Translation)_page-0006.jpg?raw=true" class="gallery-thumb" alt="Screen 6">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific(English%20Translation)_page-0007.jpg?raw=true" class="gallery-thumb" alt="Screen 7">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific(English%20Translation)_page-0008.jpg?raw=true" class="gallery-thumb" alt="Screen 8">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific(English%20Translation)_page-0009.jpg?raw=true" class="gallery-thumb" alt="Screen 9">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific(English%20Translation)_page-0010.jpg?raw=true" class="gallery-thumb" alt="Screen 10">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific(English%20Translation)_page-0011.jpg?raw=true" class="gallery-thumb" alt="Screen 11">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific(English%20Translation)_page-0012.jpg?raw=true" class="gallery-thumb" alt="Screen 12">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific(English%20Translation)_page-0013.jpg?raw=true" class="gallery-thumb" alt="Screen 13">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific(English%20Translation)_page-0014.jpg?raw=true" class="gallery-thumb" alt="Screen 14">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Stone-Pacific/Stone%20Pacific(English%20Translation)_page-0015.jpg?raw=true" class="gallery-thumb" alt="Screen 15">
                     </div>
                 </div>
             </section>
@@ -565,32 +560,76 @@
                 </div>
                 <div class="gallery-container">
                     <div class="gallery-main">
-                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Forest-knight/Forest%20knight_page-0001.jpg?raw=true" alt="Main Screenshot">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Forest-knight/Forest%20knight(English%20Translation)_page-0001.jpg?raw=true" alt="Main Screenshot">
                     </div>
                     <div class="gallery-thumbnails">
-                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Forest-knight/Forest%20knight_page-0001.jpg?raw=true" class="gallery-thumb active" alt="Screen 1">
-                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Forest-knight/Forest%20knight_page-0002.jpg?raw=true" class="gallery-thumb" alt="Screen 2">
-                        <!-- Removed repetitive list lines for brevity, place your remaining screen links here -->
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Forest-knight/Forest%20knight(English%20Translation)_page-0001.jpg?raw=true" class="gallery-thumb active" alt="Screen 1">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Forest-knight/Forest%20knight(English%20Translation)_page-0002.jpg?raw=true" class="gallery-thumb" alt="Screen 2">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Forest-knight/Forest%20knight(English%20Translation)_page-0003.jpg?raw=true" class="gallery-thumb" alt="Screen 3">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Forest-knight/Forest%20knight(English%20Translation)_page-0004.jpg?raw=true" class="gallery-thumb" alt="Screen 4">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Forest-knight/Forest%20knight(English%20Translation)_page-0005.jpg?raw=true" class="gallery-thumb" alt="Screen 5">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Forest-knight/Forest%20knight(English%20Translation)_page-0006.jpg?raw=true" class="gallery-thumb" alt="Screen 6">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Forest-knight/Forest%20knight(English%20Translation)_page-0007.jpg?raw=true" class="gallery-thumb" alt="Screen 7">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Forest-knight/Forest%20knight(English%20Translation)_page-0008.jpg?raw=true" class="gallery-thumb" alt="Screen 8">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Forest-knight/Forest%20knight(English%20Translation)_page-0009.jpg?raw=true" class="gallery-thumb" alt="Screen 9">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Forest-knight/Forest%20knight(English%20Translation)_page-0010.jpg?raw=true" class="gallery-thumb" alt="Screen 10">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Forest-knight/Forest%20knight(English%20Translation)_page-0011.jpg?raw=true" class="gallery-thumb" alt="Screen 11">
+                        <img src="https://github.com/AleksandrVysotskii04/Portfolio/blob/main/Forest-knight/Forest%20knight(English%20Translation)_page-0012.jpg?raw=true" class="gallery-thumb" alt="Screen 12">
                     </div>
                 </div>
             </section>
 
             <!-- ===================== 3D MODELS ===================== -->
             
-            <section id="3d-models-section" class="project">
-                <h2>Interactive 3D Models</h2>
+            <section id="model-james-marriott" class="project">
+                <h2>James Marriott</h2>
+                <div class="meta-info">
+                    <p><strong>Asset Type:</strong> 3D Model</p>
+                    <p><strong>Format:</strong> FBX</p>
+                </div>
                 <div class="description">
-                    <p>A selection of my 3D assets. Left-click and drag to rotate the view. Scroll to zoom in and out.</p>
+                    <p>A character model of James Marriott. Please add text here detailing the poly count, intended game engine environment, or whether it includes animations and specific rig components.</p>
                 </div>
-                
-                <div class="model-viewer-container">
-                    <model-viewer 
-                        src="path/to/your/model.glb" 
-                        alt="A 3D model showcasing my portfolio work" 
-                        auto-rotate 
-                        camera-controls>
-                    </model-viewer>
+                <a href="3Dmodels/JamesMarriott.fbx" target="_blank" class="btn-action">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Download / View FBX
+                </a>
+            </section>
+
+            <section id="model-sea-lion" class="project">
+                <h2>Sea Lion Rig</h2>
+                <div class="meta-info">
+                    <p><strong>Asset Type:</strong> 3D Model & Rig</p>
+                    <p><strong>Format:</strong> FBX</p>
                 </div>
+                <div class="description">
+                    <p>A fully rigged 3D model of a sea lion. Replace this text with notes on the rig structure, joint placement, weights, and what software it was built in.</p>
+                </div>
+                <a href="3Dmodels/SeaLion_Rig.fbx" target="_blank" class="btn-action">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Download / View FBX
+                </a>
+            </section>
+
+            <section id="model-vending-machine" class="project">
+                <h2>Vending Machine</h2>
+                <div class="meta-info">
+                    <p><strong>Asset Type:</strong> 3D Prop</p>
+                    <p><strong>Format:</strong> FBX</p>
+                </div>
+                <div class="description">
+                    <p>An environmental 3D prop of a vending machine. Update this description with details on UV mapping, texture resolution, or its role as a background asset.</p>
+                </div>
+                <a href="3Dmodels/vendingmachine.fbx" target="_blank" class="btn-action">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Download / View FBX
+                </a>
             </section>
 
             <!-- ===================== ART GALLERY ===================== -->
@@ -601,6 +640,7 @@
                     <p>A collection of my digital art, concept illustrations, and 2D assets.</p>
                 </div>
                 
+                <!-- Replace these paths with the images from your local folder -->
                 <div class="art-grid">
                     <img src="path/to/art1.jpg" alt="Artwork 1">
                     <img src="path/to/art2.jpg" alt="Artwork 2">
