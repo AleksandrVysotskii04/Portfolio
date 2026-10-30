@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Aleksandr Vysotskii</title>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     <style>
         :root {
             --bg-color: #161618;
@@ -289,6 +290,23 @@
         .gallery-thumb:hover { opacity: 0.8; }
         .gallery-thumb.active { border-color: #ffffff; opacity: 1; }
 
+        .model-viewer-container {
+            width: 100%;
+            height: 450px;
+            background-color: #242427;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        
+        model-viewer {
+            width: 100%;
+            height: 100%;
+            --poster-color: transparent;
+        }
+
         .art-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -355,11 +373,22 @@
                 </div>
 
                 <div class="toc-category">
-                    <h4>3D Models</h4>
+                    <h4>Interactive Models</h4>
                     <ul>
                         <li><a href="#model-james-marriott">James Marriott</a></li>
                         <li><a href="#model-sea-lion">Sea Lion Rig</a></li>
                         <li><a href="#model-vending-machine">Vending Machine</a></li>
+                    </ul>
+                </div>
+
+                <div class="toc-category">
+                    <h4>3D Project Renders</h4>
+                    <ul>
+                        <li><a href="#render-chess">Chess</a></li>
+                        <li><a href="#render-cloudcat">CloudCat</a></li>
+                        <li><a href="#render-jewelstandcat">JewelStandCat</a></li>
+                        <li><a href="#render-jewerly">Jewerly</a></li>
+                        <li><a href="#render-mugs">Mugs</a></li>
                     </ul>
                 </div>
 
@@ -372,8 +401,8 @@
             </div>
 
             <div class="sidebar-contacts">
-                <p>+49 1521 9346999</p>
-                <p><a href="mailto:alexandervedu@gmail.com">alexandervedu@gmail.com</a></p>
+                <p>+49 1521 9346999[cite: 2]</p>
+                <p><a href="mailto:alexandervedu@gmail.com">alexandervedu@gmail.com[cite: 2]</a></p>
                 
                 <div class="social-links">
                     <a href="https://www.linkedin.com/in/canelmo/" target="_blank" aria-label="LinkedIn" title="LinkedIn">
@@ -396,8 +425,6 @@
             <header class="page-header">
                 <p class="subtitle">Aleksandr Vysotskii</p>
             </header>
-
-            <!-- ===================== GAMES ===================== -->
 
             <section id="purrfect-destruction" class="project">
                 <h2>Purrfect Destruction</h2>
@@ -514,8 +541,6 @@
                 </div>
             </section>
 
-            <!-- ===================== GAME CONCEPTS ===================== -->
-
             <section id="stone-pacific" class="project">
                 <h2>Stone Pacific</h2>
                 <div class="meta-info">
@@ -579,68 +604,176 @@
                 </div>
             </section>
 
-            <!-- ===================== 3D MODELS ===================== -->
-            
             <section id="model-james-marriott" class="project">
                 <h2>James Marriott</h2>
                 <div class="meta-info">
-                    <p><strong>Asset Type:</strong> 3D Model</p>
-                    <p><strong>Format:</strong> FBX</p>
+                    <p><strong>Asset Type:</strong> Interactive 3D Model</p>
+                    <p><strong>Format:</strong> GLB</p>
                 </div>
                 <div class="description">
-                    <p>A character model of James Marriott. Please add text here detailing the poly count, intended game engine environment, or whether it includes animations and specific rig components.</p>
+                    <p>A character model of James Marriott. Left-click and drag to rotate the view. Scroll to zoom in and out.</p>
                 </div>
-                <a href="3Dmodels/JamesMarriott.fbx" target="_blank" class="btn-action">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-                    </svg>
-                    Download / View FBX
-                </a>
+                <div class="model-viewer-container">
+                    <model-viewer 
+                        src="3Dmodels/JamesMarriott.glb" 
+                        alt="3D model of James Marriott" 
+                        auto-rotate 
+                        camera-controls>
+                    </model-viewer>
+                </div>
             </section>
 
             <section id="model-sea-lion" class="project">
                 <h2>Sea Lion Rig</h2>
                 <div class="meta-info">
-                    <p><strong>Asset Type:</strong> 3D Model & Rig</p>
-                    <p><strong>Format:</strong> FBX</p>
+                    <p><strong>Asset Type:</strong> Interactive 3D Model & Rig</p>
+                    <p><strong>Format:</strong> GLB</p>
                 </div>
                 <div class="description">
-                    <p>A fully rigged 3D model of a sea lion. Replace this text with notes on the rig structure, joint placement, weights, and what software it was built in.</p>
+                    <p>A fully rigged 3D model of a sea lion. Left-click and drag to rotate the view. Scroll to zoom in and out.</p>
                 </div>
-                <a href="3Dmodels/SeaLion_Rig.fbx" target="_blank" class="btn-action">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-                    </svg>
-                    Download / View FBX
-                </a>
+                <div class="model-viewer-container">
+                    <model-viewer 
+                        src="3Dmodels/SeaLion_Rig.glb" 
+                        alt="3D model of a Sea Lion" 
+                        auto-rotate 
+                        camera-controls>
+                    </model-viewer>
+                </div>
             </section>
 
             <section id="model-vending-machine" class="project">
                 <h2>Vending Machine</h2>
                 <div class="meta-info">
-                    <p><strong>Asset Type:</strong> 3D Prop</p>
-                    <p><strong>Format:</strong> FBX</p>
+                    <p><strong>Asset Type:</strong> Interactive 3D Prop</p>
+                    <p><strong>Format:</strong> GLB</p>
                 </div>
                 <div class="description">
-                    <p>An environmental 3D prop of a vending machine. Update this description with details on UV mapping, texture resolution, or its role as a background asset.</p>
+                    <p>An environmental 3D prop of a vending machine. Left-click and drag to rotate the view. Scroll to zoom in and out.</p>
                 </div>
-                <a href="3Dmodels/vendingmachine.fbx" target="_blank" class="btn-action">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-                    </svg>
-                    Download / View FBX
-                </a>
+                <div class="model-viewer-container">
+                    <model-viewer 
+                        src="3Dmodels/vendingmachine.glb" 
+                        alt="3D model of a Vending Machine" 
+                        auto-rotate 
+                        camera-controls>
+                    </model-viewer>
+                </div>
             </section>
 
-            <!-- ===================== ART GALLERY ===================== -->
+            <section id="render-chess" class="project">
+                <h2>Chess</h2>
+                <div class="meta-info">
+                    <p><strong>Category:</strong> 3D Render</p>
+                </div>
+                <div class="description">
+                    <p>A detailed 3D model and render of a chess set.</p>
+                </div>
+                <div class="gallery-container">
+                    <div class="gallery-main">
+                        <img src="3Dmodels/Chess/aleksandr-vysotskii-screenshot-2026-07-21-at-19-28-15.webp" alt="Chess Main Screenshot">
+                    </div>
+                    <div class="gallery-thumbnails">
+                        <img src="3Dmodels/Chess/aleksandr-vysotskii-screenshot-2026-07-21-at-19-28-15.webp" class="gallery-thumb active" alt="Screen 1">
+                        <img src="3Dmodels/Chess/aleksandr-vysotskii-photo-2026-07-21-19-42-33.webp" class="gallery-thumb" alt="Screen 2">
+                        <img src="3Dmodels/Chess/aleksandr-vysotskii-photo-2026-07-21-19-34-20.webp" class="gallery-thumb" alt="Screen 3">
+                        <img src="3Dmodels/Chess/aleksandr-vysotskii-photo-2026-07-21-19-34-07.webp" class="gallery-thumb" alt="Screen 4">
+                        <img src="3Dmodels/Chess/aleksandr-vysotskii-img-20260721-193658-955.webp" class="gallery-thumb" alt="Screen 5">
+                        <img src="3Dmodels/Chess/aleksandr-vysotskii-1.webp" class="gallery-thumb" alt="Screen 6">
+                        <img src="3Dmodels/Chess/aleksandr-vysotskii-.webp" class="gallery-thumb" alt="Screen 7">
+                    </div>
+                </div>
+            </section>
+
+            <section id="render-cloudcat" class="project">
+                <h2>CloudCat</h2>
+                <div class="meta-info">
+                    <p><strong>Category:</strong> 3D Render</p>
+                </div>
+                <div class="description">
+                    <p>A 3D character design named CloudCat.</p>
+                </div>
+                <div class="gallery-container">
+                    <div class="gallery-main">
+                        <img src="3Dmodels/CloudCat/aleksandr-vysotskii-22.webp" alt="CloudCat Main Screenshot">
+                    </div>
+                    <div class="gallery-thumbnails">
+                        <img src="3Dmodels/CloudCat/aleksandr-vysotskii-22.webp" class="gallery-thumb active" alt="Screen 1">
+                        <img src="3Dmodels/CloudCat/aleksandr-vysotskii-22-1.webp" class="gallery-thumb" alt="Screen 2">
+                    </div>
+                </div>
+            </section>
+
+            <section id="render-jewelstandcat" class="project">
+                <h2>JewelStandCat</h2>
+                <div class="meta-info">
+                    <p><strong>Category:</strong> 3D Render</p>
+                </div>
+                <div class="description">
+                    <p>A functional and aesthetic 3D design of a cat-shaped jewelry stand.</p>
+                </div>
+                <div class="gallery-container">
+                    <div class="gallery-main">
+                        <img src="3Dmodels/JewelStandCat/aleksandr-vysotskii-tg-image-1330377850.webp" alt="JewelStandCat Main Screenshot">
+                    </div>
+                    <div class="gallery-thumbnails">
+                        <img src="3Dmodels/JewelStandCat/aleksandr-vysotskii-tg-image-1330377850.webp" class="gallery-thumb active" alt="Screen 1">
+                        <img src="3Dmodels/JewelStandCat/aleksandr-vysotskii-photo-2026-07-21-20-19-27.webp" class="gallery-thumb" alt="Screen 2">
+                    </div>
+                </div>
+            </section>
+
+            <section id="render-jewerly" class="project">
+                <h2>Jewerly</h2>
+                <div class="meta-info">
+                    <p><strong>Category:</strong> 3D Render</p>
+                </div>
+                <div class="description">
+                    <p>Collection of intricate 3D jewelry renders.</p>
+                </div>
+                <div class="gallery-container">
+                    <div class="gallery-main">
+                        <img src="3Dmodels/Jewerly/aleksandr-vysotskii-zolbsvvq-sgtajxxmlggj3xwqw51vjzdqhjd9yvn2y9lllljsf0emtxhf0c47b896dqgzjyj-mbckp6qjoikcq5z.webp" alt="Jewerly Main Screenshot">
+                    </div>
+                    <div class="gallery-thumbnails">
+                        <img src="3Dmodels/Jewerly/aleksandr-vysotskii-zolbsvvq-sgtajxxmlggj3xwqw51vjzdqhjd9yvn2y9lllljsf0emtxhf0c47b896dqgzjyj-mbckp6qjoikcq5z.webp" class="gallery-thumb active" alt="Screen 1">
+                        <img src="3Dmodels/Jewerly/aleksandr-vysotskii-screenshot-2026-07-21-at-20-04-51.webp" class="gallery-thumb" alt="Screen 2">
+                        <img src="3Dmodels/Jewerly/aleksandr-vysotskii-screenshot-2026-07-21-at-20-03-04.webp" class="gallery-thumb" alt="Screen 3">
+                        <img src="3Dmodels/Jewerly/aleksandr-vysotskii-screenshot-2026-07-21-at-20-02-54.webp" class="gallery-thumb" alt="Screen 4">
+                        <img src="3Dmodels/Jewerly/aleksandr-vysotskii-photo-2026-07-21-19-55-32.webp" class="gallery-thumb" alt="Screen 5">
+                        <img src="3Dmodels/Jewerly/aleksandr-vysotskii-photo-2026-07-21-19-55-20.webp" class="gallery-thumb" alt="Screen 6">
+                        <img src="3Dmodels/Jewerly/aleksandr-vysotskii-o-zh0kk270ix9evt5jzsegfmyl9qrjosqlbxgy7eehhfayzaugolcea67vlaxoqtd60a46on1av48amh9tr2fs9t.webp" class="gallery-thumb" alt="Screen 7">
+                        <img src="3Dmodels/Jewerly/aleksandr-vysotskii-h9awqxhvzubkeucr89viazite6y2xsee04uq5b4tj83jc7vofc4oye4ol1wpllfaukocjzhb2nm-yozf6dop9bpy.webp" class="gallery-thumb" alt="Screen 8">
+                        <img src="3Dmodels/Jewerly/aleksandr-vysotskii-ez1-wy-npeivtccv9shh2zzzs8pqmiuupuowefibcrfrly4r1wkrzvbpb2fjg8gydch9w3jbde5knyezyzv5iaez.webp" class="gallery-thumb" alt="Screen 9">
+                    </div>
+                </div>
+            </section>
+
+            <section id="render-mugs" class="project">
+                <h2>Mugs</h2>
+                <div class="meta-info">
+                    <p><strong>Category:</strong> 3D Render</p>
+                </div>
+                <div class="description">
+                    <p>Various 3D visualizations and renders of ceramic mugs.</p>
+                </div>
+                <div class="gallery-container">
+                    <div class="gallery-main">
+                        <img src="3Dmodels/Mugs/aleksandr-vysotskii-screenshot-2026-07-21-at-19-18-08.webp" alt="Mugs Main Screenshot">
+                    </div>
+                    <div class="gallery-thumbnails">
+                        <img src="3Dmodels/Mugs/aleksandr-vysotskii-screenshot-2026-07-21-at-19-18-08.webp" class="gallery-thumb active" alt="Screen 1">
+                        <img src="3Dmodels/Mugs/aleksandr-vysotskii-photo-2026-07-21-19-57-41.webp" class="gallery-thumb" alt="Screen 2">
+                        <img src="3Dmodels/Mugs/aleksandr-vysotskii-photo-2026-07-21-19-56-08.webp" class="gallery-thumb" alt="Screen 3">
+                    </div>
+                </div>
+            </section>
             
             <section id="art-gallery-section" class="project">
                 <h2>Art & Illustration</h2>
                 <div class="description">
                     <p>A collection of my digital art, concept illustrations, and 2D assets.</p>
                 </div>
-                
-                <!-- Replace these paths with the images from your local folder -->
                 <div class="art-grid">
                     <img src="path/to/art1.jpg" alt="Artwork 1">
                     <img src="path/to/art2.jpg" alt="Artwork 2">
